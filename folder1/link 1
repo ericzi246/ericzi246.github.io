@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Lab2 - Lanyue Fang's Fast Robots</title>
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+    </head>
+    <body>
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-light" id="mainNav">
+            <div class="container px-4 px-lg-5">
+                <a class="navbar-brand" href="index.html">ECE5960 FAST ROBOTS</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    Menu
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ms-auto py-4 py-lg-0">
+                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="about.html">About Me</a></li>
+                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="5960-Lab1.html">Latest Update</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Page Header-->
+        <header class="masthead" style="background-image: url('assets/img/Lab2/BLE_Header.png')">
+            <div class="container position-relative px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <div class="post-heading">
+                            <h1>Lab 2: Bluetooth</h1>
+                            <h2 class="subheading">Establish communication between your computer and the Artemis board through the bluetooth stack.</h2>
+                            <p class="post-meta">
+                                Posted by
+                                <a href="about.html">Lanyue Fang</a>
+                                on Feb 8, 2022
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Post Content-->
+        <article class="mb-4">
+            <div class="container px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">  
+                        <h2 class="section-heading">ECHO Command</h2>
+                        <p>
+                            Send an ECHO command with a string value from the computer to the Artemis board, and receive an augmented string on the computer.
+                            <p><img class="img-fluid" src="assets/img/Lab2/echo.PNG"></p>
+                        </p>
+
+                        <h2 class="section-heading">SEND_THREE_FLOATS Command</h2>
+                        <p>
+                            Send three floats to the Artemis board using the SEND_THREE_FLOATS command and extract the three float values in the Arduino sketch.
+                            <p><img class="img-fluid" src="assets/img/Lab2/sendThreeFloat.PNG"></p>
+
+                        </p>
+
+                        <h2 class="section-heading">Notification Handler </h2>
+                        <p>
+                            Setup a notification handler in Python to receive the float value (the BLEFloatCharactersitic in Arduino) from the Artemis board. In the callback function, store the float value into a (global) variable such that it is updated every time the characteristic value changes.
+                            <p><img class="img-fluid" src="assets/img/Lab2/notification handler.PNG"></p>
+                        </p>
+
+
+                        <h2 class="section-heading">Demo</h2>
+                        <p>
+                            <div style="text-align: center;">
+                                <iframe width="560" height="315" src="https://www.youtube.com/embed/kx0fhZfH-oQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+   
+                        </p>
+
+
+                        <h2 class="section-heading">Effective Data Rate</h2>
+                        <p>
+                            As shown in the figure below, I wrote a function calDataRate(), using 'ECHO' command, to calculate the data rate of the BLE.
+                            <p><img class="img-fluid" src="assets/img/Lab2/DataRateFunction.PNG"></p>
+                            Here are the results.
+                            <p><img class="img-fluid" src="assets/img/Lab2/DataRate.PNG"></p>
+                            <p><img class="img-fluid" src="assets/img/Lab2/datarate.jpg"></p>
+                        </p>
+
+                        <h2 class="section-heading">Reliability</h2>
+                        <p>
+                            To set the reliability, I set the interval of sending float message to be extremely short, such as 0.001 ms. 
+                            To my surprise, the BLE performed quite well！ 
+                            The computer read all the data published (without missing anything) from the Artemis board.
+                            <div style="text-align: center;">
+                                <iframe width="560" height="315" src="https://www.youtube.com/embed/8vkbS9fV_iU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+
+                        </p>
+
+
+
+                        <span class="caption text-muted">
+                            Posted by <a href="about.html">Lanyue Fang</a>
+                            on Feb 8, 2022
+                        </span>
+
+                        
+                       
+
+
+                    </div>
+                </div>
+            </div>
+        </article>
+        <!-- Footer-->
+        <footer class="border-top">
+            <div class="container px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <div class="small text-center text-muted fst-italic">Copyright &copy; Lanyue Fang 2022</div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+    </body>
+</html>
