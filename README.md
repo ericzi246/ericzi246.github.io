@@ -1,1 +1,1 @@
-# ericzi246.github.io
+# This is the personal webpage for Eric Zi
